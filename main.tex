@@ -1,0 +1,277 @@
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=iso-numeric]{biblatex}
+%\usepackage[style=authoryear, sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+ %\raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Dana Suchomelová} \\[7.5pt]
+
+\href{https://github.com/suchomelova-dana}{\raisebox{-0.05\height}\faGithub\ suchomelova-dana} \ $|$ \ 
+\href{https://linkedin.com/in/dana-suchomelová-4a2014293}{\raisebox{-0.05\height}\faLinkedin\ Dana Suchomelová} \ $|$ \ 
+%\href{https://linkedin.com/in/dana-suchomelová-4a2014293}{\raisebox{-0.05\height}\faGlobe\ mySite.cz} \ $|$ 
+\href{https://dribbble.com/suchodan}{\raisebox{-0.05\height} Dribble} \ $|$ 
+
+
+\href{mailto:danka.suchomelova@seznam.cz}{\raisebox{-0.05\height}\faEnvelope \ danka.suchomelova@seznam.cz} \ $|$ \ 
+\href{tel:+420774878279}{\raisebox{-0.05\height}\faMobile \ +420 774 878 279} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+%\href{https://github.com/jitinnair1/autoCV}{click here}.
+\section{O mně}
+Jmenuji se Dana Suchomelová a zaměřuji se na vývoj frontendu a návrh uživatelského rozhraní. Vystudovala jsem Fakultu Informačních technologií Českého vysokého učení technického v Praze, obor Softwarové inženýrství. Studium mi dalo rozhled do mnoha sfér IT a položil všeobecné základy. Dále jsem se specializovala na návrh UI/UX, vývoj frontendu a související úkony. Preferuji minimalistický styl a jednoduchost, snažím se o uživatelskou přívětivost a konzistenci v návrzích.
+
+%Projects
+\section{Projekty}
+
+Důležité odkazy:
+ \href{https://dribbble.com/suchodan}{Dribble} - portfólio návrhů,
+ \href{https://github.com/suchomelova-dana}{GitHub} - projekty
+
+
+ \begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{DBS portál} & \hfill \href{https://github.com/suchomelova-dana/Bachelor-Thesis}{GitHub} $|$  \href{https://www.figma.com/file/rjbyv2t9HdAaBuL6oOZsU1/Psan\%C3\%AD-test\%C5\%AF\?type=design\&node-id=278\%3A6835\&mode=design\&t=fDZXMS0PFdsedC3R-1}{Figma} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+DBS portál je webová aplikace Vysokého učení technického v Praze, která slouží pro výuku předmětu Databázové systémy. Na projektu jsem se začala podílet již ve 2. ročníku svého studia. Po dlouhodobé spolupráci jsem se poté rozhodla na projekt navázat v rámci své bakalářské práce. Práce zahrnovala sběr uživatelských požadavků, návrh,
+implementaci a uživatelské testování.
+Použité technologie: Figma, Vue.js 3 + Composition API, Typescript, Router, Pinia, ESLint, Quasar
+}
+\end{tabularx}
+
+
+
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Trenérský portál} & \hfill \href{https://github.com/suchomelova-dana/Trenersky-portal}{GitHub} $|$ \href{https://trenerskyportal.cz/}{trenerskyportal.cz} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+Trenérský portál je web vytvořený na zakázku. Jedná se o výukový portál pro trenérky moderní gymnastiky. Obsahuje edukativní videa. Portál byl vytvořen pomocí frameworku Vue.js a javascriptu.
+}
+\end{tabularx}
+
+
+
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Web SK TRASKO Vyškov} & \hfill \href{https://github.com/suchomelova-dana/SK-TRASKO-Vyskov}{GitHub} $|$ \href{https://www.figma.com/file/CQFsWhm8bDZLkdJ0MClBub/Sk-Trasko-Vy\%C5\%A1kov\?type=design\&node-id=0\%3A1\&mode=design\&t=fDZXMS0PFdsedC3R-1}{Návrhy Figma} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+Jedná se o statický web pro oddíl moderní gymnastiky SK TRASKO Vyškov. Návrhy byly realizovány ve Figmě a web byl implemntován pomocí Vue.js 3 a typescriptu. Web podporuje přihlášení členů oddílu pro soukromé informace. 
+}
+\end{tabularx}
+
+
+
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Youtube app} & \hfill \href{https://github.com/suchomelova-dana/Youtube-clone-App}{GitHub} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+Aplikace v Reactu inspirovaná aplikací Youtube. Uživatel v ní může sledovat videa, filtrovat a vyhledávat. Aplikace byla vytvořena v Reactu, a využívá online API. 
+}
+\end{tabularx}
+
+
+
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Psychologické cvičení - bludný kruh} & \hfill \href{https://www.figma.com/file/FFQuMzcxBgAm4RXJvZzPVw/Mindwell\?type=design\&node-id=0\%3A1\&mode=design\&t=fDZXMS0PFdsedC3R-1}{Figma} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+Jedná se o interaktivní návrh UI/UX ve Figmě pro mobilní i desktopové zařízení. Cvičení obsahuje bludný kruh (myšlenky, emoce, tělesné pocity a chování), který uživatel vyplňuje a má si tak uvědomit návaznost jednotlivých částí kruhu. 
+}
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+2011 - 2019 & Gymnázium a Střední odborná škola zdravotnická a ekonomická Vyškov (víceleté gymnázium)
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+2019 - 2023 & Bakalářské studium na FIT ČVUT | Softwarové inženýrství \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+
+\section{Dovednosti}
+
+\begin{tabularx}{\linewidth}{ @{}l X }
+%--------------------------------------------------------
+\multicolumn{2}{@{}X@{}}{\textbf{Programování}}\\
+
+Javascript  \rule{0pt}{3ex} &
+využíváno především s Vue.js pro vývoj frontendu webových aplikací, také pro statické weby\\
+
+Typescript  \rule{0pt}{3ex} &
+odbodně jako Javascript, Typescript jsem se naučila později, ale nyní ho preferuji\\
+
+Vue.js 2, 3  \rule{0pt}{3ex} &
+vyzkoušela jsem si obě verze frameworku, Vue 2 + Options API a Vue 3 + Composition API, přednost dávám Vue 3, zkušenost se souvisejícími knihovnami (Pinia, Quasar, Router, ESLint, I18n)\\
+
+React \rule{0pt}{3ex} &
+základní práce s frameworkem, využito pro osobní menší projekt\\
+
+\texttt{C}, \texttt{C++} \rule{0pt}{3ex} &
+základní znalost jazyků, použito pro školní projekty a semestrální práce\\
+
+Scala  \rule{0pt}{3ex} &
+základy programovacího jazyka, osvojení OOP patternů\\
+
+Racket  \rule{0pt}{3ex} &
+základy funkcionálního programování \\
+
+Prolog  \rule{0pt}{3ex} &
+základy logického programování\\
+
+%--------------------------------------------------------
+\\\multicolumn{2}{@{}X@{}}{\textbf{Návrh}}\\
+Figma \rule{0pt}{3ex} &
+hi-fi navrhování UI/UX pomocí Figmy, prototypování, vytváření komponent a jejich variant\\
+
+Balsamiq Wireframes \rule{0pt}{3ex} &
+lo-fi návrh rozhraní \\
+
+Inkscape \rule{0pt}{3ex} &
+využíváno pro vytváření loga a jiné vektorové grafiky \\
+
+Gimp \rule{0pt}{3ex} &
+úpravy fotek, retuš, koláže, bitmapová grafika \\
+
+UML \rule{0pt}{3ex} &
+class diagram, activity diagram, use case, sequence diagramy - pro modelování používán Enterprise Architect  \\
+
+OntoUML \rule{0pt}{3ex} &
+kategorie objektů, rigidita, vztahy celek-část  \\
+
+Sběr požadavků \rule{0pt}{3ex} &
+analýza a sběr uživatelských požadavků, kategorizace (FURPS, MoSCoW) \\
+
+
+
+
+
+%--------------------------------------------------------
+\\\multicolumn{2}{@{}X@{}}{\textbf{Ostatní}}\\
+
+Git \rule{0pt}{3ex} &
+vytváření a správa repozitářů, mergování, rebase...\\
+
+Testování UI \rule{0pt}{3ex} &
+uživatelské testování prostředí s testovacími subjekty, testovací případy\\
+
+Vuepress \rule{0pt}{3ex} &
+využito k vytvoření dokumentace frontendu webové aplikace\\
+
+Databáze \rule{0pt}{3ex} &
+konceptuální modelování, základní i pokročilejší dotazování SQL \\
+
+Blender \rule{0pt}{3ex} &
+základy 3D modelování \\
+
+Jazyky \rule{0pt}{3ex} &
+český jazyk (rodný), anglický jazyk (B1/B2)\\
+
+\end{tabularx}
+
+
+
+\vfill
+\center{\footnotesize Poslední úprava: \today}
+
+\end{document}
