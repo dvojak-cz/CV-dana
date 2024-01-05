@@ -4,9 +4,11 @@ env:
   PDF_ARTEF_NAME: suchomelova_cv
 
 on:
-  push:
-    tags:
-      - '*'
+  workflow_call:
+    outputs:
+      ARTEFACT_NAME:
+        description: Name of the artefact
+        value: $PDF_ARTEF_NAME
 
 jobs:
   build:
